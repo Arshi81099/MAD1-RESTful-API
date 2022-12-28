@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Home</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    </head>
+    <body>
+        {% if count == 0 %}
+
+            <h1>Student List</h1>
+            <p>No student found. Add the students now!</p>
+            <a href="/student/create">+ Add Students</a>
+
+        {% elif count == 1 %}
+
+            <h1> Students List</h1>
+            <table id = "all-students">
+                <tr>
+                <th>SNo</th>
+                <th>Roll Number</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Actions</th>
+                </tr>
+
+            {% for studs in student_id %}
+                <tr>
+                <td>{{ loop.index }}</td>
+                <td><a href="/student/{{ studs['student_id'] }}">{{ studs['roll_number'] }}</a></td>
+                <td>{{ studs['first_name'] }}</td>
+                <td>{{ studs['last_name'] }}</td>
+                <td>
+                <a href="/student/{{ studs['student_id'] }}/update" type="button">Update</a>
+                <a href="/student/{{ studs['student_id'] }}/delete" type="button">Delete</a>
+                </td>
+            {% endfor %}
+
+                </table>
+                <a href="/student/create">+ Add Students</a>
+        {% endif %}
+            </body>
+            </html>

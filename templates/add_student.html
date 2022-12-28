@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Add Student</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    </head>
+    <body>
+    <H1> Add a Student</H1>
+    <form action="/student/create" method="POST" id="create-form">
+    <div>
+    <label>Roll Number:</label>
+    <input type="text" name="roll" required />
+    </div>
+    <br>
+    <div>
+    <label>First Name:</label>
+    <input type="text" name="f_name" required />
+    </div>
+    <br>
+    <div>
+    <label>Last Name:</label>
+    <input type="text" name="l_name" />
+    </div>
+    <br>
+    <div>
+    <label>Select Courses: </label>
+    <input type="checkbox" name="courses" value="course_1" />
+    <label>MAD I</label>
+    <input type="checkbox" name="courses" value="course_2" />
+    <label>DBMS</label>
+    <input type="checkbox" name="courses" value="course_3" />
+    <label>PDSA</label>
+    <input type="checkbox" name="courses" value="course_4" />
+    <label>BDM</label>
+    </div>
+    <br>
+    <div>
+    <input type="submit" value = "Submit">
+    </div>
+    </form>
+</body>
+</html>
